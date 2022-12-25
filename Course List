@@ -1,0 +1,37 @@
+Day 1
+Insttudction to .Net Framework
+Intermediate Lanuguage (IL)
+Assemlies and Their Structure ,EXE /DLL 
+CLR and Its Function
+  JIT Compliation
+  Memeory Management
+  Gerbage Collection
+  AppDomain Management
+  CLS,CTS
+  Security
+  
+  Day 2
+  .Net Framwork,.Net Core ,Mono, Xamarin Difference
+  Version and Framework
+  Managed and unManaged Code
+  Intrudction to Visual Studio
+  Using ILDASM
+  
+  Day 3
+  Console Application and Class Libraries ,Net Core
+  C# Basics
+  Project Reference,using Classess
+  Data Tyoes in .net and CTS equivalents
+  Method
+   Method overloading
+   Optional parameter
+   Nameparamedn and Positional Parameteters
+   using param
+   local function
+   get set properties
+   readonly properties
+   using properties accessc to create readonly property
+   constructors
+   object intilizers
+   destructor
+   discussion of IDispose 
