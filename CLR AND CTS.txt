@@ -1,0 +1,45 @@
+CLR Parts
+Class Loader: 
+	Loading And initilizing .net class and Types
+ 	Load the Assembly
+  	Type verification
+	Manage Dependecies
+ 	Execution And management of .net Application
+Code Manager:
+  	Execution of .net Code
+JIt : Just in time Compilation 
+   	MSIL Code to Native Code
+Garbage Collector:
+ 	 Automatic Memory Management
+  	1: Allocate Memory
+  	2: DeAlloactin Memory
+Exception Manager: provide Exception handling Feature
+	1.Complier
+	2.Run time
+	Exception handling
+	try catch and finally 
+Thread Support: Its multiple Thread Application
+Type Checker: To check data Type Checking
+Debug Engine: Debugging Process
+           BreakPoint
+	   Stepping
+	   CallStack
+           Variable Inspection
+           Exception Handing
+Com(Component Object Model)
+Security Engine: to Provide Security of .net Application
+ CAS (Code Access Security)
+ Role Based 
+ Cryptography
+
+CLS(Common language Specifcation): To provide Language interoperability
+1 Provide Code Execution Support which is written in any Other Language
+2.We can get By Managed Code & Unmanaged Code
+
+CTS : 
+
+
+
+
+
+  

@@ -1,0 +1,43 @@
+.Net Framework or library
+
+1.It is a framework for window Application
+2. Microsoft 2002 1.1 
+3. use For Software Application   
+ - Console,WIndow,Web Appliaction,Web Services
+4.Its Support Multiple Languages right now 62 
+C#.net
+VB.net
+VC++.net
+F#.net
+C++.net
+etc
+
+1.VB
+2.VC++
+3.Active Server Pages.
+
+.NET Framework Architecture
+
+Language -> window ,Web 
+Library->FCL(Framework Class Library)
+CLR -> Common Language Runtime
+
+.net framework -> .net core
+
+1.Micro Service []server 12 gb RAM  1000 users
+2.Legacy Application(Monolithic)-> server 12 gb RAM  1000 users [IRCTC] [11:45 to 00:20 AM]
+
+
+School
+ Addmission->  C#
+ Account -> JAVA 
+ Admin-> PHP
+ HR  -MERN MEAN
+ TransPort - Python 
+
+SchoolApps [.net] single code  base  
+
+
+
+
+
