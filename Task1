@@ -9,17 +9,7 @@ Can the user types implement the shared attributes and behaviors independently, 
 =================================================================================================================================================================================================
 public abstract class User
         {
-            /*
-             You are a developer working on a project that involves designing a system for a university. 
-The system needs to handle different types of users, 
-including 
-students, 
-professors, 
-and administrative staff. 
-You have been tasked with designing the class hierarchy for these user types. 
-            Your goal is to determine whether 
-            to use abstract classes or interfaces for the implementation.
-             */
+          
             public string Name { get; set; }
             public string Email { get; set; }
             public string AaharNo { get; set; }
