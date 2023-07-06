@@ -1,0 +1,35 @@
+
+            Hashtable ht = new Hashtable();
+            ht.Add("Name", "RAM");
+            ht.Add("Age", "34");
+            ht.Add("City", "NOIDA");
+            ht.Add("Gender", "MALE");
+            ht.Add(5, 345);
+            foreach (object key in ht.Keys) {
+                Console.WriteLine(""+ht[key]+"");
+               /// Console.WriteLine($"a value is key {key} \t ");
+            }
+            //foreach (object key in ht.Values)
+            //{
+            //    Console.WriteLine($"{key}");
+            //    /// Console.WriteLine($"a value is key {key} \t ");
+            //}
+            //Console.WriteLine(ht["Gender"]);
+            //ArrayList arrayList=new ArrayList();
+            //arrayList.Add(50);
+            //arrayList.Add(60);
+            //arrayList.Add(7);
+            //arrayList.Add(100);
+            //arrayList.Add(6);
+            //arrayList.Add(90);
+            //arrayList.Add("AKSHAT");
+            //arrayList.Insert(3, 55);
+            ////arrayList.RemoveAt(0);
+            ////arrayList.Remove(5);
+            ////arrayList.Sort();
+            //foreach (object i in arrayList)
+            //{
+            //    Console.WriteLine(i);
+            //}
+            ////Console.WriteLine(arrayList.Capacity);
+            Console.ReadKey();
