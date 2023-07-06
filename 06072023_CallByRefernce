@@ -30,3 +30,14 @@ internal class Program
             sub = x - y;
         }
     }
+
+//int? add=null;
+            //if(add.HasValue)
+            //{
+            //    int value = add.Value;
+            //    Console.WriteLine(value);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Null Value");
+            //}
