@@ -1,0 +1,23 @@
+ int[] salary = new int[5];//first way
+            int[] salary2 = new int[5] {23,45,67,89,20 };//Second Way
+            int[] salary3 = new int[] { 23, 67, 89, 20 };//Third Way
+            int[] salary4 = {10,20,30 };//Fourth Way
+
+            salary[0] = 10000;
+            salary[1] = 20000;
+            salary[2] = 30000;
+            salary[3] = 40000;
+            salary[4] = 50000;
+            for (int i = 0; i < salary.Length; i++)
+            {
+                Console.WriteLine(salary[i]);
+            }
+
+            Console.WriteLine(salary[2]);
+
+            foreach (int i in salary2)
+            {
+                Console.WriteLine(i);
+            }
+
+            Console.ReadKey();
