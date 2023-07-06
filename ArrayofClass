@@ -1,0 +1,29 @@
+internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //Student student = new Student();
+            Student[] student = new Student[3];//Array of class
+            for(int i=0; i<student.Length; i++) 
+            {
+                Console.WriteLine("Yor are entering student"+(i+1));
+                student[i] = new Student();
+                Console.WriteLine("Enter Your Name");
+                student[i].Name = Console.ReadLine();
+                Console.WriteLine("Enter Your id");
+                student[i].Id = Convert.ToInt32(Console.ReadLine());
+            }
+            for (int i = 0; i < student.Length; i++)
+            {
+                Console.WriteLine("===============================");
+                Console.WriteLine("id" + student[i].Id+ "Your Name"+ student[i].Name);
+            }
+            Console.ReadKey();
+        }
+       
+    }
+    public class Student
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+    }
