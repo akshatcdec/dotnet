@@ -1,0 +1,32 @@
+internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int add;
+            int multi;
+            int div;
+            int sub;
+            Sum(1, 2,out add,out multi,out div,out sub);
+
+            Console.WriteLine(add);
+            Console.ReadKey();
+        }
+        //public static int Sum(int x, int y)
+        //{
+        //    return x + y;
+        //}
+        public static void Sum1(int x,int y,ref int add,ref int mult,ref int dv,ref int sub)
+        {
+            add = x + y;
+            mult=x*y;
+            dv = x / y;
+            sub = x - y;
+        }
+        public static void Sum(int x, int y, out int add, out int mult, out int dv, out int sub)
+        {
+            add = x + y;
+            mult = x * y;
+            dv = x / y;
+            sub = x - y;
+        }
+    }
