@@ -41,3 +41,14 @@ internal class Program
             //{
             //    Console.WriteLine("Null Value");
             //}
+
+////////////////
+NUll-Coalescing Operator (??)
+NUll-Coalescing Assignment Operator (??=)
+
+string name = null;
+            //name??="CDAC";//assigement
+            
+            string displayename = name ?? "CDAC";//condtional
+            Console.WriteLine(displayename);
+            Console.ReadKey();
