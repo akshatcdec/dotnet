@@ -1,0 +1,44 @@
+public class Calculater<T>
+    {
+        //public bool CompareData<T>(T x, T y)
+        //{
+        //    return x.Equals(y);
+        //}
+        public void Add(T x,T y)
+        {
+            dynamic obj1 = x;
+            dynamic obj2 = y;
+            Console.WriteLine(obj1+obj2);
+        }
+        public void Multi(T x, T y)
+        {
+            dynamic obj1 = x;
+            dynamic obj2 = y;
+            Console.WriteLine(obj1 * obj2);
+        }
+    }
+      
+        internal class Program
+        {
+
+            static void Main(string[] args)
+            {
+                Calculater<int> ob = new Calculater<int>();
+                ob.Add(1,2);
+                 ob.Multi(1, 2);
+                Console.ReadKey();
+                //Console.WriteLine(ob.CompareData<int>(10, 10));
+                //Console.WriteLine(ob.CompareData<double>(100D, 1000D));
+                //Console.WriteLine(ob.CompareData<float>(10.566F, 10.5867F));
+                //Console.ReadKey();
+                /*var xyz1 = "RamuKAKA";
+                dynamic xyz;
+                xyz = "RamuKAKA";
+                Console.WriteLine(xyz);
+                xyz = 20;
+                Console.WriteLine(xyz);
+                */
+
+            }
+
+        }
