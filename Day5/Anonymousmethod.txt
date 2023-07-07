@@ -1,0 +1,15 @@
+
+    public delegate void LoginEventHandler(string username, string password);
+    internal class Program
+    {
+       
+        static void Main(string[] args)
+        {
+            LoginEventHandler loginEvent = delegate(string uname, string password)
+            {
+                Console.WriteLine($"The user name {uname} and password {password} ");
+            };
+            loginEvent("user", "pass");
+            Console.ReadKey();
+        }
+    }
