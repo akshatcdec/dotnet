@@ -1,0 +1,5 @@
+  Tuple<int, string, string> person = Tuple.Create(45, "AKSHAT", "NOIDA");
+            Console.WriteLine(person.Item1);
+            Console.WriteLine(person.Item2);
+            Console.WriteLine(person.Item3);
+            Console.ReadKey();
