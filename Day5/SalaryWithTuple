@@ -5,6 +5,12 @@
 3. C# 7.0
 4.it can  be function
 
+Use Case : 
+          Returning Multiple value from Function
+          Pasing Multiple value as  paremmeter
+          Working with hetrogeneous Data
+          Temp Storage [no Requied Class or Struct)
+
 We have To calculate Salary Via Tuple
 TA,DA,HRA,Total,BS
 15,10,20,cal,Input
