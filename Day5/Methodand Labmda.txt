@@ -1,0 +1,19 @@
+  List<Employee> list = new List<Employee>();
+            Employee emp1 = new Employee { Name = "RAM", Salary = 1000 };
+            Employee emp2 = new Employee { Name = "RAMKUmar", Salary = 20000 };
+            list.Add(emp1);
+            list.Add(emp2);
+            var tempem = list.Where(x => x.Salary > 5000 && x.Name=="RAM");
+            foreach(var employee in tempem)
+            {
+                Console.WriteLine(employee.Name);
+            }
+            // CalculateSalary calc = delegate (Employee e)
+            //{
+
+            //    return e.Salary > 5000 ? e.Salary : 0;
+            //};
+           // Employee emp = new Employee { Name = "RAM", Salary = 10000 };
+            
+            //Console.WriteLine(calc(emp));
+            Console.ReadKey();
