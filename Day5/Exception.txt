@@ -1,0 +1,54 @@
+public class InvalidMinAccount:Exception
+    {
+        public InvalidMinAccount() { }
+        public InvalidMinAccount(double amount):base($"The Amount{amount} Must be greater then 0")
+        {
+
+        }
+
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            try
+            {
+                //string[] citis = { "DELHI", "NOIDA", "PATNA", "LUCKNOW" };
+                //Console.WriteLine(citis[4]);
+                int a=0;
+                a = Convert.ToInt32(Console.ReadLine());
+                 if (a < 0) {
+                 throw new InvalidMinAccount(a);
+                }
+                Console.WriteLine(a);
+
+            }
+            catch (IndexOutOfRangeException ex)
+            {
+
+                Console.WriteLine("Out of Range" +ex.Message);
+            }
+            catch (FormatException ex)
+            {
+
+                Console.WriteLine("Format");
+            }
+            catch (InvalidMinAccount ex)
+            {
+
+                Console.WriteLine("invalid");
+            }
+
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("demo");
+                Console.ReadKey();
+            }
+        }
+        
+    }
