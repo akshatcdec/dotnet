@@ -1,0 +1,10 @@
+You have been given the task to calculate and analyze the grades of a group of students. 
+Each student's grade is determined by their scores in three subjects: Math, English, and Science. 
+You need to write a program that takes in the scores of each student, calculates their average score, and determines their grade based on the following criteria:
+
+Average Score >= 90: Grade A
+Average Score >= 80: Grade B
+Average Score >= 70: Grade C
+Average Score >= 60: Grade D
+Average Score < 60: Grade F
+Write a C# program that satisfies the following requirements with tuple:
