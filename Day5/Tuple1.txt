@@ -1,0 +1,24 @@
+
+            (string, int, double) GetDetails()//Tuple As method/function
+            {
+                return ("RAM", 56, 5000D);
+            }
+            //Creating a Tuple
+            var person = ( name :"RAM" ,Age: 30, City:"NOIDA" );
+            Console.WriteLine( person.name );
+            Console.WriteLine(person.Age);
+            Console.WriteLine(person.City);
+            //Console.ReadKey();
+
+            //DeContruct Tuple
+            var (name,age,city) = person;
+            Console.WriteLine(name);
+            Console.WriteLine(age);
+            Console.WriteLine(city);
+           
+            var details = GetDetails();
+            Console.WriteLine(details.Item1);
+            Console.WriteLine(details.Item2);
+            Console.WriteLine(details.Item3);
+
+            Console.ReadKey();
