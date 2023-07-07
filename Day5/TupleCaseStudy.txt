@@ -11,9 +11,8 @@ Write a C# program that satisfies the following requirements with tuple:
 
 =============================================================================================================
 
-You have been assigned to create a fee management system for a school. Your program should allow the user to enter student details, including their name, grade, and the amount of fees paid. The program should store this information in a list of tuples. Additionally, the program should provide the following functionality:
+You have been assigned to create a fee management system for a school. Your program should allow the user to enter student details, including their name, grade, and the amount of fees paid. The program should store this information with tuples. Additionally, the program should provide the following functionality:
 
 Display all student information entered so far.
-Search for a student by name and display their fee details.
 Calculate and display the total fees collected from all students.
 Calculate and display the average fee amount paid by students.
