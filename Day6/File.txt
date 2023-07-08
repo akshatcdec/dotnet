@@ -9,6 +9,20 @@
             Console.ReadKey();
             File.Delete(filepath);
             Console.ReadKey();
+ 
+string filepath = @"C:\Example\test.txt";
+            File.WriteAllText(filepath, "Hello World Ramkumar");
+            
+            FileInfo fileInfo = new FileInfo(filepath);
+             Console.WriteLine(fileInfo.FullName);
+            Console.WriteLine(fileInfo.Exists);
+            Console.WriteLine(fileInfo.Length);
+            Console.WriteLine(fileInfo.CreationTime);
+            Console.WriteLine(fileInfo.LastWriteTime);
+            fileInfo.Delete();
+           // Console.WriteLine(fileInfo.LastWriteTimeUtc);
+            Console.ReadKey();
+
 
             //File,FileInfo
             //Directory/DirectoryInfo
