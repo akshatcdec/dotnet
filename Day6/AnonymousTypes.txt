@@ -1,0 +1,10 @@
+//Anonymous Types
+            var student = new
+            {
+                studentName="Ram",
+                Age=30,
+                City="DELHI",
+                Country="INDIA"
+            };
+            Console.WriteLine(student.studentName);
+            Console.ReadKey();
