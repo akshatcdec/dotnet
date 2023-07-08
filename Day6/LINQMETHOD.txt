@@ -1,0 +1,12 @@
+  var emps = new List<Employee>()
+            {
+                new Employee(){ Name="Ravi",Age="30",Salary=100 },
+                new Employee(){ Name="RAM",Age="30",Salary=200 },
+                new Employee(){ Name="SITA",Age="30",Salary=3000 },
+                new Employee(){ Name="SHYAM",Age="30",Salary=4000 },
+                new Employee(){ Name="RAMESH",Age="30",Salary=5000 }
+            };
+           // bool IsSalary = emps.All(emp => emp.Salary > 3000);
+            bool IsSalary = emps.Any(emp => emp.Salary > 3000 && emp.Name=="RAM");
+
+            Console.WriteLine(IsSalary);
