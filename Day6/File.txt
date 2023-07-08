@@ -1,0 +1,18 @@
+ string filepath = @"C:\Example\test.txt";
+            File.WriteAllText(filepath, "Hello World Ramkumar");
+            
+            bool fileexist=File.Exists(filepath);
+            Console.WriteLine("File Exist" + fileexist);
+            string filecontent=File.ReadAllText(filepath);
+            Console.WriteLine(filecontent);
+
+            Console.ReadKey();
+            File.Delete(filepath);
+            Console.ReadKey();
+
+            //File,FileInfo
+            //Directory/DirectoryInfo
+            //FileStream,StreamReader/StreamWriter
+            //BinaryForatter/XmlSerializer
+            //TextReader/TestWriter
+            //GzipStream
