@@ -1,0 +1,25 @@
+string folderpath = @"C:\Example\1920";
+            Directory.CreateDirectory(folderpath);
+            //Console.WriteLine(Directory.Exists(folderpath));
+            
+            //string[] files = Directory.GetFiles(folderpath);
+            //Console.WriteLine("Files is Directory");
+            //foreach (string file in files)
+            //{
+            //    Console.WriteLine(file);
+            //}
+            //Directory.Exists(folderpath);
+            DirectoryInfo directoryInfo = new DirectoryInfo(folderpath);
+            
+            if(directoryInfo.Exists)
+            {
+                FileInfo[] fileInfos = directoryInfo.GetFiles();
+                foreach (FileInfo fileInfo in fileInfos)
+                {
+                    Console.WriteLine($"{fileInfo.Name}: {fileInfo.CreationTime} : {fileInfo.Extension}");
+                }
+            }
+
+
+            //Directory.Delete(folderpath,true);
+            Console.ReadKey();
