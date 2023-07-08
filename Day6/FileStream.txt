@@ -1,0 +1,18 @@
+
+            string filepath = @"C:\Example\Sample.txt";
+             FileStream fileStream=new FileStream(filepath,FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            string datatowriter = "Helllo From  FileStream";
+            
+            ///writing the data
+            byte[] Bytowrite =System.Text.Encoding.UTF8.GetBytes(datatowriter);//string to byte
+            fileStream.Write(Bytowrite, 0, Bytowrite.Length);
+            //Reset the postion to begining of file
+            fileStream.Seek(0, SeekOrigin.Begin);
+
+            byte[] bytestoread=new byte[fileStream.Length];
+            fileStream.Read(bytestoread, 0, bytestoread.Length);
+            string dateraed= System.Text.Encoding.UTF8.GetString(bytestoread);//byte to string
+            Console.WriteLine(dateraed);
+            fileStream.Close();
+            //Directory.Delete(folderpath,true);
+            Console.ReadKey();
