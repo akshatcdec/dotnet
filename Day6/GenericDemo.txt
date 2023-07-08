@@ -1,0 +1,16 @@
+﻿var emps = new List<Employee>()
+            {
+                new Employee(){ Name="Ravi",Age="30",Salary=100 },
+                new Employee(){ Name="RAM",Age="30",Salary=200 },
+                new Employee(){ Name="SITA",Age="30",Salary=3000 },
+                new Employee(){ Name="SHYAM",Age="30",Salary=4000 },
+                new Employee(){ Name="RAMESH",Age="30",Salary=5000 }
+            };
+            foreach (Employee e in emps)
+            {
+                if(e.Salary>3000)
+                {
+                    Console.WriteLine($"{e.Name}{e.Age}{e.Salary}"); 
+                }
+            }
+            Console.ReadKey();

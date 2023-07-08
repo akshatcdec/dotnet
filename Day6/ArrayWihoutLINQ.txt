@@ -1,0 +1,14 @@
+﻿int[] salary = { 100, 200, 3000, 4000, 5000,90,1567 };
+            int count = 0;
+            foreach (int i in salary)
+            {
+                if(i > 3000)
+                    count++;
+            }
+            Array.Sort(salary);
+            foreach (int i in salary)
+            {
+               Console.WriteLine(i);
+            }
+            Console.WriteLine(count);
+            Console.ReadKey();

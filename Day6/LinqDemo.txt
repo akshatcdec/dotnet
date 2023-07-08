@@ -1,0 +1,37 @@
+﻿ var emps = new List<Employee>()
+            {
+                new Employee(){ Name="Ravi",Age="30",Salary=100 },
+                new Employee(){ Name="RAM",Age="30",Salary=200 },
+                new Employee(){ Name="SITA",Age="30",Salary=3000 },
+                new Employee(){ Name="SHYAM",Age="30",Salary=4000 },
+                new Employee(){ Name="RAMESH",Age="30",Salary=5000 }
+            };
+            var filtersalary = from tempsal in emps
+                               where tempsal.Salary > 3000
+                               select tempsal;
+            var filtersalaryci = from tempsal in emps
+                               where tempsal.Salary > 3000
+                               select new
+                               {
+                               FullDetails= ""+tempsal.Salary+":"+ tempsal.Age+":"+tempsal.Name,
+                               FullName= tempsal.Name, 
+                               FullAge= tempsal.Age,
+                               };
+           
+            foreach (var emp in filtersalaryci)
+            {
+                Console.WriteLine(emp.FullAge);
+                Console.WriteLine(emp.FullDetails);
+                Console.WriteLine(emp.FullName);
+            }
+            //from aliasname in <Source> clause select alias
+            /*  int[] salary = { 100, 200, 3000, 4000, 5000, 90, 1567 };
+               var filtersalary=from tempsal in salary
+                                where tempsal>3000
+                                select tempsal;
+              foreach (int i in filtersalary)
+              {
+                  Console.WriteLine(i);
+              }
+            */
+            Console.ReadKey();
