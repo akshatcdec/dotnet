@@ -1,0 +1,32 @@
+ internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Calculater calculater = new Calculater();
+            Console.WriteLine(calculater.Add(2, 3));
+            Console.WriteLine(calculater.Sub(3, 2));
+            Console.WriteLine(calculater.Mul(3, 2));
+            Console.WriteLine(calculater.Div(2, 2));
+            Console.ReadKey();
+        }
+    }
+    public static class ExtendMyCalculater
+    {
+        public static int Mul(this Calculater ob,int x,int y)
+        {
+            return(x*y);
+        }
+        public static int Div(this Calculater ob, int x, int y)
+        {
+            return (x / y);
+        }
+    }
+    public sealed class Calculater
+    {
+        public int  Add(int x,int y) {
+        return x + y;   }
+        public int Sub(int x, int y)
+        {
+            return x - y;
+        }
+    }
