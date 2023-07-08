@@ -1,0 +1,24 @@
+string path = @"C:\Users\AKSHAT\source\repos\Calculater\bin\Debug\Calculater.dll";
+            try
+            {
+                Assembly obj=Assembly.LoadFile(path);
+                Console.WriteLine(obj.GetName().Name);
+                Console.WriteLine(obj.GetName().Version);
+                Console.WriteLine(obj.GlobalAssemblyCache);
+                 foreach(Type type in obj.GetTypes())
+                {
+                    Console.WriteLine(type.FullName);
+                }
+
+                //Type type = obj.GetType();
+                //MethodInfo[] m1 = type.GetMethods();
+                //foreach (MethodInfo m2 in m1)
+                //{
+                //    Console.WriteLine(m2.Name);
+                //}
+
+
+            }
+            catch (Exception ex) { }
+
+            Console.ReadKey();
