@@ -10,3 +10,25 @@
             bool IsSalary = emps.Any(emp => emp.Salary > 3000 && emp.Name=="RAM");
 
             Console.WriteLine(IsSalary);
+
+//except ,intersect,union
+            var cricketPlayer = new List<string>()
+            {
+                "VIRAT",
+                "SACHIN",
+                "DHONI"
+            };
+            var actor = new List<string>()
+            {
+                "SALMAN",
+                "AKSHAY",
+                "DHONI"
+            };
+            // var list=cricketPlayer.Union(actor); 
+            // var list = cricketPlayer.Except(actor);
+            var list = cricketPlayer.Intersect(actor);
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+            }
+            //Console.WriteLine(list);
