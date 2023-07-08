@@ -32,3 +32,17 @@
                 Console.WriteLine(item);
             }
             //Console.WriteLine(list);
+var cricketPlayer = new List<string>()
+            {
+                "VIRAT",
+                "SACHIN",
+                "DHONI",
+                "SALMAN",
+                "AKSHAY",
+            };
+            //var list = cricketPlayer.Take(2);
+            var list = cricketPlayer.Skip(3).Take(2);
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+            }
