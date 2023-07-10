@@ -1,0 +1,36 @@
+ internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Thread thread1 = new Thread(Test1);
+            Thread thread2 = new Thread(Test2);
+            Thread thread3 = new Thread(Test3);
+            thread1.Start();
+            thread2.Start();
+            thread3.Start();
+            Console.ReadKey();
+        }
+        public static void Test1()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                if (i == 3)
+                    Thread.Sleep(5000);
+                Console.WriteLine("This is Thread 1 :- "+i);
+            }
+        }
+        public static void Test2()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine("This is Thread 2 :- " + i);
+            }
+        }
+        public static void Test3()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine("This is Thread 3 :- " + i);
+            }
+        }
+    }
