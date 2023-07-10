@@ -1,3 +1,10 @@
+Thread ss = new Thread(() =>
+            {
+                Console.WriteLine("Hello");
+
+            });
+            ss.Start();
+            ss.Priority = ThreadPriority.Lowest;
 for (int i=0; i < 100; i++)
             {
                 int task = 1;
