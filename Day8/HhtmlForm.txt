@@ -1,0 +1,27 @@
+Here is a list of commonly used ASP.NET Core HTML helper functions:
+
+Html.ActionLink: Generates an anchor tag for invoking an action in a controller.
+Html.BeginForm: Generates the opening <form> tag for a form.
+Html.CheckBox: Generates a checkbox input field.
+Html.DropDownList: Generates a drop-down list.
+Html.EditorFor: Generates an input element based on the data type of the property.
+Html.Hidden: Generates a hidden input field.
+Html.LabelFor: Generates a <label> tag for a model property.
+Html.ListBox: Generates a multi-select list box.
+Html.PasswordFor: Generates a password input field.
+Html.RadioButton: Generates a radio button input field.
+Html.TextAreaFor: Generates a textarea input field.
+Html.TextBoxFor: Generates a text input field.
+Html.ValidationMessageFor: Generates validation error messages for a model property.
+These are just a few examples, and there are many more HTML helper functions available in ASP.NET Core. These helper functions assist in generating HTML markup that is strongly typed and helps reduce manual coding and potential errors.
+
+Here is a list of commonly used ASP.NET Core helper tags:
+
+<a asp-controller>: Generates an anchor tag for invoking an action in a controller.
+<form asp-controller>: Generates the opening <form> tag for a form.
+<input asp-for>: Generates an input field for a model property.
+<label asp-for>: Generates a <label> tag for a model property.
+<select asp-for>: Generates a select drop-down list for a model property.
+<textarea asp-for>: Generates a textarea input field for a model property.
+<button type="submit" asp-controller>: Generates a submit button for invoking an action in a controller.
+These ASP.NET Core helper tags are prefixed with asp- and are used to generate HTML elements with appropriate attributes based on the model properties and specified controller actions. They provide a convenient and strongly-typed way to generate HTML markup, reducing the need for manual coding and helping to maintain consistency and correctness.
