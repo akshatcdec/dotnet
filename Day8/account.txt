@@ -1,4 +1,10 @@
-   [HttpPost]
+ @{
+        if (ViewData["MSG"]!=null)
+        {
+            <span> @ViewData["MSG"].ToString()</span>
+        }
+    }
+[HttpPost]
         public IActionResult Login(LoginViewModel loginViewModel)
         {
             if(loginViewModel.Email == "Test" & loginViewModel.Password=="Demo@123") 
