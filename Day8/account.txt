@@ -1,0 +1,33 @@
+   [HttpPost]
+        public IActionResult Login(LoginViewModel loginViewModel)
+        {
+            if(loginViewModel.Email == "Test" & loginViewModel.Password=="Demo@123") 
+            {
+               return  Redirect("/Account/Dashboard");
+            }
+            else
+            {
+                return Redirect("/Account/Dashboard");
+            }
+        }
+        public IActionResult ChangePassword()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult ChangePassword(ChangePasswordViewModel vw)
+        {
+
+            if(vw.NewPassword != vw.RetypePassword)
+            {
+                ViewData["MSG"] = "New Password Not match";
+                return View(vw);
+            }
+            else
+            {
+                ViewData["MSG"] = "Password Changed";
+                ModelState.Clear();
+                return View(null);
+
+            }
+        }
