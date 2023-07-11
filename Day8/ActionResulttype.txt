@@ -1,0 +1,19 @@
+ public IActionResult JsonResultDemo()
+        {
+            var data = new { Name = "Demo", Age = 30 };
+            return Json(data);
+        }
+        public IActionResult FileResultDemo()
+        {
+            var path = "demo.png";
+            return File(path, "image/png");
+        }
+        public IActionResult ContentResultDemo()
+        {
+            var conte = "Hello World";
+            return Content(conte, "text/plain");
+        }
+        public IActionResult Index()
+        {
+            return Redirect("/Home/MyName");
+        }
