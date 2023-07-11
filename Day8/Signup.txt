@@ -1,0 +1,101 @@
+ public IActionResult SignUp()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult SignUp(SignUpViewModel signUpViewModel)
+        {
+            List<SignUpViewModel> userList = new List<SignUpViewModel>();
+            userList.Add(new SignUpViewModel { MobileNo = "23", Email = "a@yahoo.com" });
+            userList.Add(new SignUpViewModel { MobileNo = "34", Email = "b@yahoo.com" });
+            userList.Add(new SignUpViewModel { MobileNo = "56", Email = "c@yahoo.com" });
+            userList.Add(new SignUpViewModel { MobileNo = "78", Email = "d@yahoo.com" });
+           
+            //
+            bool IsMobileExists = userList.Any(x => x.MobileNo == signUpViewModel.MobileNo);
+            if(IsMobileExists)
+            {
+                ViewData["MSG"] = "Mobile Exists";
+                return View(signUpViewModel);
+            }
+            bool IsEmailExists = userList.Any(x => x.Email == signUpViewModel.Email);
+            if (IsEmailExists)
+            {
+                ViewData["MSG"] = "Email Exists";
+                return View(signUpViewModel);
+            }
+            //int IsMobileExists= userList.Where(x => x.MobileNo == signUpViewModel.MobileNo).ToList().Count();
+
+            return View();
+        }
+public class SignUpViewModel
+    {
+        [Display (Name="Enter User ID")]
+        [Required(ErrorMessage ="Enter email Id")]
+        [MaxLength(2)]
+        public string Email { get; set; }
+        public string Password { get; set; }
+        [Compare("Password")]
+        public string RetypePassword { get; set; }
+       
+        [Display(Name = "Enter Mobile Number")]
+        [Required(ErrorMessage = "Enter Mobile")]
+        [MaxLength(10)]
+        public string MobileNo { get; set; }
+        public string Name { get; set; }
+    }
+
+@model TestApp.Models.SignUpViewModel
+
+@{
+    ViewData["Title"] = "SignUp";
+}
+
+<h4>SignUpViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="SignUp">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RetypePassword" class="control-label"></label>
+                <input asp-for="RetypePassword" class="form-control" />
+                <span asp-validation-for="RetypePassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MobileNo" class="control-label"></label>
+                <input asp-for="MobileNo" class="form-control" />
+                <span asp-validation-for="MobileNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="SignUP" class="btn btn-primary" />
+            </div>
+            @{
+            if (ViewData["MSG"]!=null)
+            {
+            <span> @ViewData["MSG"].ToString()</span>
+            }
+            }
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Login</a>
+</div>
+
