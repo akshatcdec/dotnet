@@ -28,6 +28,87 @@ User Creation
                 ModelState.Clear();
                 return View(null);
             }
+
+ public bool CheckMobileNo(string mobileNo)
+        {
+            string myConnectionString = "server=localhost;database=testpro;uid=root;pwd=;";
+            string sqlquery = $"SELECT COUNT(*) From users Where MobileNo='{mobileNo}'";
+            MySqlConnection sqlConnection = new MySqlConnection(myConnectionString);///
+            MySqlCommand command = new MySqlCommand(sqlquery, sqlConnection);
+            sqlConnection.Open();
+            command.CommandType = CommandType.Text;
+            int Count = Convert.ToInt32(command.ExecuteScalar());
+            sqlConnection.Close();
+            if (Count > 0)
+                return true;
+            else
+                return false;
+        }
+        public bool CheckMEmail(string email)
+        {
+            string myConnectionString = "server=localhost;database=testpro;uid=root;pwd=;";
+            string sqlquery = $"SELECT COUNT(*) From users Where Email='{email}'";
+            MySqlConnection sqlConnection = new MySqlConnection(myConnectionString);///
+            MySqlCommand command = new MySqlCommand(sqlquery, sqlConnection);
+            sqlConnection.Open();
+            command.CommandType = CommandType.Text;
+            int Count = Convert.ToInt32(command.ExecuteScalar());
+            sqlConnection.Close();
+            if (Count > 0)
+                return true;
+            else
+                return false;
+        }
+
+        [HttpPost]
+        public IActionResult SignUp(SignUpViewModel signUpViewModel)
+        {
+
+            bool IsMobile = CheckMobileNo(signUpViewModel.MobileNo);
+            bool IsEmail = CheckMEmail(signUpViewModel.Email);
+            if (IsMobile)
+            {
+                ViewData["MSG"] = "Mobile Exist";
+                return View(signUpViewModel);
+            }
+            if (IsEmail)
+            {
+                ViewData["MSG"] = "Email Exist";
+                return View(signUpViewModel);
+            }
+            if (IsEmail == false && IsMobile == false)
+            {
+                string myConnectionString = "server=localhost;database=testpro;uid=root;pwd=;";
+                string sqlquery = "INSERT INTO users(Email, Password, MobileNo, Name, UserType) VALUES (@Email, @Password, @MobileNo, @Name, @UserType)";
+                MySqlConnection sqlConnection = new MySqlConnection(myConnectionString);///
+                MySqlCommand command = new MySqlCommand(sqlquery, sqlConnection);
+                sqlConnection.Open();
+                command.CommandType = CommandType.Text;
+                command.Parameters.Add("@Email", MySqlDbType.VarChar).Value = signUpViewModel.Email;
+                command.Parameters.Add("@Password", MySqlDbType.VarChar).Value = signUpViewModel.Password;
+                command.Parameters.Add("@MobileNo", MySqlDbType.VarChar).Value = signUpViewModel.MobileNo;
+                command.Parameters.Add("@Name", MySqlDbType.VarChar).Value = signUpViewModel.Name;
+                command.Parameters.Add("@UserType", MySqlDbType.VarChar).Value = "STUDENT";
+                int result = command.ExecuteNonQuery();
+                if (result > 0)
+                {
+                    ViewData["MSG"] = "Account Created Please Login";
+                    ModelState.Clear();
+                    return View(null);
+                }
+                else
+                {
+                    ViewData["MSG"] = "Network error";
+                    return View(signUpViewModel);
+                }
+            }
+            else
+            {
+                return View(signUpViewModel);
+            }
+           
+        }
+    
             else
             {
                 ViewData["MSG"] = "Network error";
