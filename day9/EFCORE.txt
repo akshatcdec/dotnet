@@ -8,3 +8,62 @@ public class ProDBContext: DbContext
         public DbSet<UserDBModel> Users { get; set; }//what table you are going to use
 
     }
+ public class UserDBModel
+    {
+        [Key]
+        public int Id { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public string MobileNo { get; set; }
+        public string Name { get; set; }
+        public string UserType { get; set; }
+    }
+ ProDBContext proDBContext=new ProDBContext();
+            List<UserDBModel> signUpViewModels = new List<UserDBModel>();
+            var userlist= proDBContext.Users.ToList();
+            return View(userlist);
+
+ public IActionResult SignUp(SignUpViewModel signUpViewModel)
+        {
+            ProDBContext proDBContext = new ProDBContext();
+            bool IsMobile = proDBContext.Users.Any(x => x.MobileNo == signUpViewModel.MobileNo);
+            bool IsEmail = proDBContext.Users.Any(x => x.Email == signUpViewModel.Email);
+            if (IsMobile)
+            {
+                ViewData["MSG"] = "Mobile Exist";
+                return View(signUpViewModel);
+            }
+            if (IsEmail)
+            {
+                ViewData["MSG"] = "Email Exist";
+                return View(signUpViewModel);
+            }
+            if (IsEmail == false && IsMobile == false)
+            {
+                var userDBModel=new UserDBModel();//Mapping
+                userDBModel.Name= signUpViewModel.Name;
+                userDBModel.Email = signUpViewModel.Email;
+                userDBModel.Password = signUpViewModel.Password;
+                userDBModel.MobileNo = signUpViewModel.MobileNo;
+                userDBModel.UserType = "STUDENT";
+                proDBContext.Users.Add(userDBModel);//addding data to db
+                int result=proDBContext.SaveChanges();//saving data in db
+
+                if (result > 0)
+                {
+                    ViewData["MSG"] = "Account Created Please Login";
+                    ModelState.Clear();
+                    return View(null);
+                }
+                else
+                {
+                    ViewData["MSG"] = "Network error";
+                    return View(signUpViewModel);
+                }
+            }
+            else
+            {
+                return View(signUpViewModel);
+            }
+           
+        }
