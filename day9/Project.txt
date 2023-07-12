@@ -9,3 +9,27 @@ View Form Data - Edit Form
 , Fee Desposit,
 User Creation
   Operator   ->View Data
+
+ string myConnectionString = "server=localhost;database=testpro;uid=root;pwd=;";
+            string sqlquery= "INSERT INTO users(Email, Password, MobileNo, Name, UserType) VALUES (@Email, @Password, @MobileNo, @Name, @UserType)";
+            MySqlConnection sqlConnection = new MySqlConnection(myConnectionString);///
+            MySqlCommand command = new MySqlCommand(sqlquery, sqlConnection);
+            sqlConnection.Open();
+            command.CommandType = CommandType.Text;
+            command.Parameters.Add("@Email",MySqlDbType.VarChar).Value = signUpViewModel.Email;
+            command.Parameters.Add("@Password", MySqlDbType.VarChar).Value = signUpViewModel.Password;
+            command.Parameters.Add("@MobileNo", MySqlDbType.VarChar).Value = signUpViewModel.MobileNo;
+            command.Parameters.Add("@Name", MySqlDbType.VarChar).Value = signUpViewModel.Name;
+            command.Parameters.Add("@UserType", MySqlDbType.VarChar).Value = "STUDENT";
+            int result= command.ExecuteNonQuery();
+            if (result > 0)
+            {
+                ViewData["MSG"] = "Account Created";
+                ModelState.Clear();
+                return View(null);
+            }
+            else
+            {
+                ViewData["MSG"] = "Network error";
+                return View(signUpViewModel);
+            }
