@@ -1,0 +1,20 @@
+public class EmployeeViewModel
+    {
+        public int EmpId { get; set; }
+        public string EmployeeName { get; set; }
+        public string FatherName { get; set; }
+        public string MobileNo { get; set; }
+    }
+   public class UtilsDB
+    {
+        public static List<EmployeeViewModel> userList = new List<EmployeeViewModel>();
+        public static List<EmployeeViewModel> GetEmployeeViews() 
+        { 
+            return userList; 
+        }
+        public static void AddEmployee(EmployeeViewModel employeeView)
+        {
+            userList.Add(employeeView);
+            //return userList;
+        }
+    }
