@@ -1,4 +1,12 @@
- public class StudentController : Controller
+ public class StudentViewModel
+    {
+        public int StudentId { get; set; }
+        public string Studentname { get; set; }
+        public string Course { get; set; }
+        public string MobileNo { get; set; }
+        public string City { get; set; }
+    }
+public class StudentController : Controller
     {
         public IActionResult Index()
         {
