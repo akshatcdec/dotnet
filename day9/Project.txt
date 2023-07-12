@@ -1,0 +1,11 @@
+StudentUser : 
+Registration->
+Edit Profile->
+Form Submit-> 
+Form Print 
+ChangePassword
+  Admin:->
+View Form Data - Edit Form 
+, Fee Desposit,
+User Creation
+  Operator   ->View Data
