@@ -1,0 +1,15 @@
+  string myConnectionString = "server=localhost;database=testpro;uid=root;pwd=;";
+            
+
+            MySqlConnection sqlConnection = new MySqlConnection(myConnectionString);///
+            MySqlCommand sql = new MySqlCommand("SELECT * FROM LOGIN", sqlConnection);
+            sqlConnection.Open();
+            MySqlDataReader sqlDataReader = sql.ExecuteReader();
+            
+            DataTable dt = new DataTable();
+            dt.Load(sqlDataReader);
+            foreach (DataRow dr in dt.Rows)
+            {
+                string Uanme = dr["Email"].ToString();
+                string Password = dr["Password"].ToString();
+            }
