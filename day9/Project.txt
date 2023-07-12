@@ -114,3 +114,26 @@ User Creation
                 ViewData["MSG"] = "Network error";
                 return View(signUpViewModel);
             }
+ List<SignUpViewModel> signUpViewModels = new List<SignUpViewModel>();
+            string myConnectionString = "server=localhost;database=testpro;uid=root;pwd=;";
+            MySqlConnection sqlConnection = new MySqlConnection(myConnectionString);///
+            MySqlCommand sql = new MySqlCommand("SELECT * FROM Users", sqlConnection);
+            sqlConnection.Open();
+            MySqlDataReader sqlDataReader = sql.ExecuteReader();
+
+            DataTable dt = new DataTable();
+            dt.Load(sqlDataReader);
+            foreach (DataRow dr in dt.Rows)
+            {
+                //, Password, MobileNo, Name, UserType
+                signUpViewModels.Add(new SignUpViewModel
+                {
+                    Name = dr["Name"].ToString(),
+                 Email= dr["Email"].ToString(),
+                 MobileNo= dr["MobileNo"].ToString(),
+                 Password= dr["Password"].ToString(),
+                 UserType= dr["UserType"].ToString()
+
+                });
+            }
+            return View(signUpViewModels);
