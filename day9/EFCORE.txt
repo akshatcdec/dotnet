@@ -1,0 +1,10 @@
+public class ProDBContext: DbContext
+    {
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            string con = "server=localhost;database=testpro;uid=root;pwd=;";
+            optionsBuilder.UseMySql(con, ServerVersion.AutoDetect(con));
+        }
+        public DbSet<UserDBModel> Users { get; set; }//what table you are going to use
+
+    }
