@@ -1,0 +1,23 @@
+Introduction:
+The online admission system portal is designed to streamline the admission process for educational institutions. It provides a user-friendly platform for administrators, students, and operators to manage and process admissions efficiently. This case study will explore the roles and functionalities of the three main users: Admin, Student, and Operator.
+
+User Roles:
+
+2.1 Admin:
+
+The admin is responsible for overall system management and configuration.
+Admin can add/edit/delete courses, programs, and admission criteria.
+They have the authority to manage user accounts, including creating and modifying user roles.
+Admin can generate reports and statistics related to admissions.
+2.2 Student:
+
+Students can create an account on the portal to initiate the admission process.
+They can view available courses and programs.
+Students can fill out the admission application form, upload necessary documents, and pay the application fee.
+They can track the status of their application and receive updates from the system.
+Students can accept admission offers and complete necessary enrollment formalities.
+2.3 Operator:
+
+Operators play a vital role in the admission process.
+They have access to student applications and can review and verify the submitted documents.
+Operators can update the application status and communicate with students if additional information is required.
