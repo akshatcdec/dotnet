@@ -1,0 +1,23 @@
+  Step1; Startup -> builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(x => x.LoginPath = "/Account/login");
+--------------------------------------------------------------------------------------------\
+Add Login Code
+
+  var claims = new List<Claim>() {
+                    new Claim(ClaimTypes.NameIdentifier, Convert.ToString("Id")),
+                        new Claim(ClaimTypes.Name, "Demo"),
+                        new Claim(ClaimTypes.Role, "Admin"),
+                        new Claim("Id", "UserId")
+                };
+                //Initialize a new instance of the ClaimsIdentity with the claims and authentication scheme    
+                var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                //Initialize a new instance of the ClaimsPrincipal with ClaimsIdentity    
+                var principal = new ClaimsPrincipal(identity);
+                //SignInAsync is a Extension method for Sign in a principal for the specified scheme.    
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, new AuthenticationProperties());
+                return LocalRedirect("");
+======================================================================================================
+  public async Task < IActionResult > LogOut() {  
+        await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);  
+        return LocalRedirect("/");  
+    }  
