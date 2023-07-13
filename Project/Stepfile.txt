@@ -14,3 +14,27 @@ Step 6:create a migration file with the help of command(dotnet ef migrations add
 Step 7:it create a migation folder with snapshot and anotherfile wiht your migration name
 Step 7:to update the database you need to run data update command (dotnet ef database update)
 Step 7:It create database wiht migration table and dbmodel table
+Step9: Create all Contoller related to Role 
+Step10:Configure Program.cs with Authentication Types[Cookies,JWT,OAUTH]
+  
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(x => x.LoginPath = "/Account/login");
+
+  app.UseAuthentication();
+  app.UseAuthorization();
+
+Step11;Apply Attribute to Controller or Method With Role or Without Role 
+[Authorize(Roles = "Admin")]
+Step 12: Define Cookies code on login 
+var claims = new List<Claim>() {
+                        new Claim(ClaimTypes.NameIdentifier, Convert.ToString(user.Id)),
+                        new Claim(ClaimTypes.Name, user.Name),
+                        new Claim(ClaimTypes.Role, user.UserType),
+                        new Claim("MobileNo", user.MobileNo)
+                };
+                //Initialize a new instance of the ClaimsIdentity with the claims and authentication scheme    
+                var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                //Initialize a new instance of the ClaimsPrincipal with ClaimsIdentity    
+                var principal = new ClaimsPrincipal(identity);
+                //SignInAsync is a Extension method for Sign in a principal for the specified scheme.    
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, new AuthenticationProperties());
