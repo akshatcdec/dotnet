@@ -1,0 +1,16 @@
+Step 1:Create Project With MVC
+Step 2: Install the Nuget 
+			 EntityFrameworkCore(6.4.4)
+			 Microsoft.EntityFrameworkCore(5.0.17)
+			 Microsoft.EntityFrameworkCore.Tools(5.017)
+			 MySql.Data(8.0.31)
+			 MySql.EntityFrameworkCore(5.0.17)
+Step3 :Create DataModel Class With Data Annotation
+Step 4:Create a Empty DB
+Step 4:Create a DBContext override method 
+and pass the connection string
+Step 5:Create a DBset Property With your DBModel
+Step 6:create a migration file with the help of command(dotnet ef migrations add FirstTest)
+Step 7:it create a migation folder with snapshot and anotherfile wiht your migration name
+Step 7:to update the database you need to run data update command (dotnet ef database update)
+Step 7:It create database wiht migration table and dbmodel table
