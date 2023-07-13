@@ -1,0 +1,50 @@
+
+@{
+    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+    var Role = User.FindFirstValue(ClaimTypes.Role);
+    var IsAdmin = User.IsInRole("Admin");
+    var IsStudent = User.IsInRole("Admin");
+}
+<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+    <ul class="navbar-nav flex-grow-1">
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </li>
+        @if (IsAdmin)
+        {
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Index">UserList</a>
+            </li>
+        }
+        @if (IsStudent)
+        {
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="EditProfile">Profile</a>
+            </li>
+        }
+            
+        @if (IsStudent || IsAdmin)
+        {
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="ChangePassword">ChangePassword</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
+            </li>
+        }
+        else
+        {
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+        </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Signup">Signup</a>
+            </li>
+        }
+    </ul>
+</div>
+
+@using System.Security.Claims add this to _viewimport
