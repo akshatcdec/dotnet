@@ -21,3 +21,7 @@ Add Login Code
         await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);  
         return LocalRedirect("/");  
     }  
+[Authorize(Roles = "User")]
+ var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+    var Role = User.FindFirstValue(ClaimTypes.Role);
+    var result = User.IsInRole("Admin");
