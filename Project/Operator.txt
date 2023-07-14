@@ -1,0 +1,5 @@
+Operator
+1:Only Student Record
+2:Modify Record Exclude [UserType,CreationTime,Mobile,Email,Password]
+3:No Delete 
+4.View Detail Exclude [UserType,CreationTime,Mobile,Email,Password]
